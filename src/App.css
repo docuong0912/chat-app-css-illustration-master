@@ -1,0 +1,426 @@
+:root{
+  --light-grayish-violet: hsl(270, 20%, 96%);
+  --verydark-des-violet: hsl(271, 36%, 24%);
+  --verylight-magenta:hsl(289, 100%, 72%);
+  /*gradients*/
+  --light-magenta:hsl(293, 100%, 63%);
+  --light-violet:hsl(264, 100%, 61%);
+  /*text*/
+  --pale-violet:hsl(276, 100%, 81%);
+  --mod-violet:hsl(276, 55%, 52%);
+  --des-dark-violet:hsl(271, 15%, 43%);
+  --grayish-blue:hsl(206, 6%, 79%);
+  --verydark-des-violet: hsl(271, 36%, 24%);
+  --darkgray-violet:hsl(270, 7%, 64%);
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+*{
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container{
+  background-color: var(--light-grayish-violet);
+  width:100vw;
+  height:100vh;
+  z-index: -1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.paragraph{
+  text-align: center;
+  color: var(--darkgray-violet);
+  padding: 30px;
+}
+.container::before{
+  content: '';
+  position: absolute;
+  height: 700px;
+  top:-200px;
+  left:-120px;
+  width:75%;
+  background-color: var(--light-violet);
+  border-radius: 200px;
+  z-index: 1;
+}
+.phone-header img{
+  
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.phone-header::before{
+  position: absolute;
+  width:50%;
+  height: 30px;
+  background-color: white;
+  content: '';
+  border-radius: 25px;
+  top: -15px;
+  left:50px;
+}
+.phone-header{
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(to right,var(--light-violet),var(--light-magenta));
+  border-radius: 20px;
+  padding: 10px;
+  z-index: 4;
+  height: 70px;
+  box-shadow: 0 5px 10px lightgray;
+}
+.phone-header p{
+  color:var(--darkgray-violet);
+  font-size: 8px;
+}
+b{
+  color:var(--light-grayish-violet);
+}
+.phone{
+  position: relative;
+  padding: 15px;
+  z-index: 2;
+  width: 260px;
+  height: 530px;
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: 5px 1px 30px grey;
+}
+.info{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 75%;
+  margin:15px 5px;
+  font-size: 10px;
+}
+.chat-box{
+  position: relative;
+  z-index: 3;
+  top:-20px;
+  background-color: var(--light-grayish-violet);
+  width: 100%;
+  height: 450px;
+  border-radius: 20px;
+  padding: 5px;
+  overflow: hidden;
+}
+.conversation{
+  width: 100%;
+  height: 85%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.chat{
+  position: relative;
+  width: 70%;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.chat >p{
+  background-color: lightgray;
+  padding: 10px 5px;
+  font-size: 9px;
+  margin-top: 5px;
+  border-radius: 5px;
+  display:table;
+}
+
+.right{
+  align-self: flex-end;
+}
+.left>p{
+  color:var(--mod-violet);
+}
+.right>p{
+  align-self: flex-end;
+  background-color: white;
+  box-shadow: 0 10px 10px lightgray;
+  color:var(--des-dark-violet);
+  text-align: right;
+}
+.conversation img{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+.booking>*{
+  display: inline-block;
+}
+.booking{
+  padding: 10px;
+  font-size: 10px;
+  background-image: linear-gradient(to left,var(--light-violet),var(--light-magenta));
+  border-radius: 10px;
+  margin-top: 5px;
+}
+input[type="text"]{
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+.send-btn{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--verydark-des-violet);
+  border: none;
+  outline:none;
+  right:15px;
+  bottom: 20px;
+  animation-name: pop;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 15s;
+  cursor: pointer;
+}
+.send-btn::before,.send-btn::after{
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 4px;
+  background-color: white;
+  right:10px;
+  border-radius: 10px;
+}
+.send-btn::before{
+  transform: rotate(35deg);
+  bottom: 15px;
+}
+.send-btn::after{
+  transform: rotate(-35deg);
+  bottom: 10px;
+}
+.more-btn{
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  position: absolute;
+  right: 25px;
+  top:35px;
+  background-color: white;
+  border:none;
+  outline: none;
+}
+.more-btn::before,.more-btn::after{
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  right: 0;
+}
+.more-btn::before{
+  top:-6px;
+}
+.more-btn::after{
+  top:6px;
+}
+.radio-btn{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border:1px solid var(--verylight-magenta);
+}
+.booking{
+  color: var(--light-grayish-violet);
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  align-items: center;
+}
+.price{
+  font-size: 12px;
+  align-self: flex-end;
+}
+main{
+  text-align: center;
+  margin-top: 20px;
+}
+@media only screen and (min-width:1024px){
+  .container::before{
+    width:40%;
+    border-radius: 300px;
+    height: 120%;
+    top:-300px;
+  }
+  .container{
+    flex-direction: row;
+  }
+  main{
+    width: 40%;
+    text-align: left;
+  }
+  h1{
+    margin-left: 25px;
+    font-size: 40px;
+  }
+  .paragraph{
+    text-align: left;
+  }
+  .phone{
+    box-shadow: 5px 20px 30px gray;
+  }
+}
+.left>.dialog {
+  position: relative;
+  right:200px;
+  bottom:100px;;
+  animation-name: popupleft;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+.d1{
+  animation-delay: 2.5s;
+}
+.d2{
+  animation-delay: 3.5s;
+}
+.d3{
+  animation-delay: 5.5s;
+}
+.d4{
+  animation-delay: 6.5s;
+}
+.d5{
+  animation-delay: 7.5s;
+}
+.d6{
+  animation-delay: 11.5s;
+}
+.d7{
+  animation-delay: 13.5s;
+}
+.d8{
+  animation-delay: 13.5s;
+}
+.right>.dialog{
+  position: relative;
+  left:200px;
+  bottom: 100px;
+  animation-name: popupright;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+@keyframes popupleft{
+  from{
+    right:200px;
+  bottom:100px;;
+  }
+  to{right:0;
+    bottom:0;}
+}
+@keyframes popupright{
+  from{
+    left:200px;
+  bottom:100px;;
+  }
+  to{left:0;
+    bottom:0;}
+}
+.texting{
+  visibility: hidden;
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+  width: 50px;
+  height: 40px;
+  border-radius: 10px;
+  animation-name: disappear;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+}
+.right>.texting{
+  align-self: flex-end;
+}
+.loading:empty{
+  position: relative;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+
+}
+.loading::before,.loading::after{
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: white;
+}
+.loading::before{
+  right:10px;
+}
+.loading::after{
+  left:10px;
+  animation-delay: 1s;
+}
+.loading::before,.loading::after{
+  animation-name: floating2;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+.loading:empty{
+  animation-name: floating1;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-delay: .7s;
+}
+@keyframes floating1 {
+  0%{bottom: 0;}
+  50%{bottom: 7px;}
+  100%{bottom: 0;}
+}
+@keyframes floating2 {
+  0%{bottom: 0;}
+  50%{bottom: 3px;}
+  100%{bottom: 0;}
+}
+@keyframes pop {
+  0%{
+    width: 30px;
+    height: 30px;
+  }
+  50%{
+    width: 32px;
+    height: 32px;
+  }
+  100%{
+    width: 30px;
+    height: 30px;
+  }
+}
+@keyframes disappear {
+  0%{
+    visibility: hidden;
+  }
+  25%{
+    visibility: visible;
+  }
+  100%{
+    visibility: hidden;
+  }
+}
+.t2{
+  animation-delay: 4s;
+  animation-duration: 1s;
+}
+.t3{
+  animation-delay: 8s;
+  animation-duration: 3.5s;
+}
